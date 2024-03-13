@@ -1,3 +1,4 @@
+import 'package:ecommerce_advanced/core/app/env.varibles.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -6,6 +7,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
       title: 'Flutter Demo',
       theme: ThemeData(
   
