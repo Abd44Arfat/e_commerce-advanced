@@ -1,4 +1,6 @@
+import 'package:ecommerce_advanced/core/app/connectivity_controller.dart';
 import 'package:ecommerce_advanced/core/app/env.varibles.dart';
+import 'package:ecommerce_advanced/core/common/screens/no_network_screen.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -6,15 +8,41 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-  
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: Scaffold(appBar: AppBar(title:Text( 'advanced proj'),),)
+  return ValueListenableBuilder(
+      valueListenable: ConnectivityController.instance.isConnected,
+      builder: (_, value, __) {
+        if (value) {
+          return MaterialApp(
+            title: 'Asroo Store',
+            debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
+            theme: ThemeData(
+              colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+              useMaterial3: true,
+            ),
+            builder: (context, widget) {
+              return Scaffold(
+                body: Builder(
+                  builder: (context) {
+                    ConnectivityController.instance.init();
+                    return widget!;
+                  },
+                ),
+              );
+            },
+            home: Scaffold(
+              appBar: AppBar(
+                title: const Text('Asroo Store'),
+              ),
+            ),
+          );
+        } else {
+          return MaterialApp(
+            title: 'No NetWork ',
+            debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
+            home: const NoNetWorkScreen(),
+          );
+        }
+      },
     );
   }
 }

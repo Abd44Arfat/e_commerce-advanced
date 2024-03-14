@@ -32,10 +32,17 @@ dev_dependencies:
     sdk: flutter
   very_good_analysis: ^5.1.0
   flutter_launcher_icons: ^0.13.1  
+  
 
 
   flutter_lints: ^2.0.0
 
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/1024.png"
+  adapive_icon_background: "#0E0E0E"
+  adapive_icon_foreground: "assets/icons/play_store_512.png"
 
 flutter:
 
@@ -44,6 +51,7 @@ flutter:
   assets:
     - .env.dev
     - .env.prod
+    - assets/images/core/
 
     
 
@@ -72,3 +80,8 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+flutter_assets:
+  assets_path: assets/images/core
+  output_path: lib/core/common/style
+  filename: app_images.dart
+  field_prefix:
