@@ -49,14 +49,13 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<LoginResponse> userRole(Map<String, dynamic> getUserRole) async {
+  Future<UserRoleResponse> userRole() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(getUserRole);
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<LoginResponse>(Options(
+        .fetch<Map<String, dynamic>>(_setStreamType<UserRoleResponse>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -72,7 +71,7 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = LoginResponse.fromJson(_result.data!);
+    final value = UserRoleResponse.fromJson(_result.data!);
     return value;
   }
 
