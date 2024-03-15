@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
                   AppLocalizationsSetup.localeResolutionCallback,
               title: 'Asroo Store',
               debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
-              theme: themeLight(),
+              theme: themeDark(),
               builder: (context, widget) {
                 return GestureDetector(
                   onTap: () {
@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
                 );
               },
               onGenerateRoute: AppRoutes.onGenerateRoute,
-              initialRoute: AppRoutes.test1,
+              initialRoute: AppRoutes.login,
             ),
           );
         } else {

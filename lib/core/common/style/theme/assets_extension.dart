@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 
 class MyAssets extends ThemeExtension<MyAssets> {
   const MyAssets({
-    required this.testimage,
-  
+    required this.bigNavBar,
+    required this.homeBg,
   });
 
-  final String? testimage;
+  final String? bigNavBar;
+  final String? homeBg;
 
   @override
   ThemeExtension<MyAssets> copyWith({
@@ -15,8 +16,8 @@ class MyAssets extends ThemeExtension<MyAssets> {
     String? homeBg,
   }) {
     return MyAssets(
-      testimage: testimage,
-    
+      bigNavBar: bigNavBar,
+      homeBg: homeBg,
     );
   }
 
@@ -29,17 +30,17 @@ class MyAssets extends ThemeExtension<MyAssets> {
       return this;
     }
     return MyAssets(
-      testimage: testimage,
-    
+      bigNavBar: bigNavBar,
+      homeBg: homeBg,
     );
   }
 
   static const MyAssets dark = MyAssets(
-    
-testimage: Assets.imagesCoreEmptyScreen
+    bigNavBar: Assets.imagesCustomerBigNavBarDark,
+    homeBg:  Assets.imagesCustomerHomeBgDark,
   );
   static const MyAssets light = MyAssets(
-  testimage: Assets.imagesCoreNoNetwork
-
+    bigNavBar:  Assets.imagesCustomerHomeBgLight,
+    homeBg:  Assets.imagesCustomerHomeBgLight,
   );
 }

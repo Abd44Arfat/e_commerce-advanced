@@ -12,6 +12,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  #animation
+  animate_do: 
 #localization
   flutter_localization: ^0.2.0
   cupertino_icons: ^1.0.2
@@ -24,7 +26,12 @@ dependencies:
 
   #firebase
   firebase_core: ^2.27.0
-  
+  #bloc
+  flutter_bloc: ^8.1.4
+  shared_preferences: ^2.2.2
+
+  freezed_annotation: ^2.4.1
+
 
 dev_dependencies:
   flutter_test:
@@ -32,6 +39,8 @@ dev_dependencies:
   very_good_analysis: ^5.1.0
   flutter_launcher_icons: ^0.13.1
   flutter_lints: ^2.0.0
+  build_runner: ^2.4.8
+  freezed: ^2.4.7
 
 flutter_icons:
   android: true
@@ -69,7 +78,7 @@ flutter:
           weight: 700
 
 flutter_assets:
-  assets_path: assets/images/core
+  assets_path: assets/images/
   output_path: lib/core/common/style
   filename: app_images.dart
   field_prefix:

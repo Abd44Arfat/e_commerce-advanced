@@ -15,7 +15,7 @@ ThemeData themeDark() {
       displaySmall: TextStyle(
         fontSize: 14,
         color: ColorsDark.white,
-        // fontFamily: FontFamilyHelper.geLocalozedFontFamily(),
+        fontFamily: FontFamilyHelper.geLocalozedFontFamily(),
       ),
     ),
   );
@@ -30,7 +30,7 @@ ThemeData themeLight() {
       displaySmall: TextStyle(
         fontSize: 14,
         color: ColorsLight.black,
-        // fontFamily: FontFamilyHelper.geLocalozedFontFamily(),
+        fontFamily: FontFamilyHelper.geLocalozedFontFamily(),
       ),
     ),
   );
