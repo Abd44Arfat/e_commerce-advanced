@@ -23,6 +23,7 @@ dependencies:
   flutter_dotenv: 
   flutter_screenutil: ^5.9.0
   flutter_native_splash: ^2.3.10
+  get_it: ^7.6.7
 
   #firebase
   firebase_core: ^2.27.0
